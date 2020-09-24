@@ -3,7 +3,8 @@ package Leetcode451;
 import java.util.PriorityQueue;
 // 451 根据字符出现的次序排队
 // 加入优先队列 优先队列中，元素赋予优先级，当访问元素的时候，具有最高优先级的元素先被删除
-// 这个写法要能看懂，基于堆优化的算法
+// 这个写法要能看懂，基于堆排序
+// 然后将字符串拼接起来
 class Solution {
     public String frequencySort(String s) {
         //初始化字母数组
