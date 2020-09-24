@@ -2,9 +2,9 @@ package Leetcode205;
 
 import java.util.HashMap;
 import java.util.HashSet;
-
 // 205 同构字符串
 // 思路：两个同构字符串就是保证字符串s可以唯一映射到他，同时t可以唯一映射到s
+// 相当于调用两遍的函数
 public class Solution {
     private boolean isisIsomorphicHelper(String s, String t)
     {
