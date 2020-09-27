@@ -6,9 +6,7 @@ import java.util.Map;
 // 447 回旋镖的数量
 class Solution {
     public int numberOfBoomerangs(int[][] points) {
-
         int res = 0;
-
         //O(n^2)
         // 对于每一个结点，计算该节点和其他结点之间的距离，然后按照距离-key 点的数量-value的方式进行存储
         for(int i = 0; i < points.length;i++){
@@ -32,7 +30,6 @@ class Solution {
 
         return res;
     }
-
     private int distance(int[] x, int[] y){
         // 计算距离的平方
         return (x[0] - y[0]) * (x[0] - y[0]) + (x[1] - y[1]) * (x[1] - y[1]);
