@@ -1,5 +1,5 @@
 package Leetcode50;
-// 矩阵快速幂
+// Pow(x,n)
 public class Solution {
     public double myPow(double x, int n) {
         if(x == 0.0f) return 0.0d;
@@ -19,3 +19,4 @@ public class Solution {
         return res;
     }
 }
+
