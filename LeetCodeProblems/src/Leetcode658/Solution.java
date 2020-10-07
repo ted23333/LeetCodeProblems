@@ -6,14 +6,16 @@ import java.util.List;
 // 寻找k个最接近的元素
 class Solution {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
-        // 这道题可以转化为求k个元素数组的左边界
+        // 这道题可以转化为求k个元素数组的左边界，因为数组的长度是固定的，
         int l = 0, r = arr.length - k;
         // 左边界可以是0，右边界最大的值是数组的长度-k
         while (l < r) {
             int mid = l + (r - l) / 2;
             if (x - arr[mid] > arr[mid + k] - x) {
                 // 每次数组移动的时候，只需要比较mid和mid+k两个位置的元素（一左一右）
+                // 因为移动的时候，只有这两个元素被换了位置
                 // 根据这两个位置的元素判断 左边的元素是不是更接近x
+                //  如果不是的话就要把整个长度为k的数组向右移动
                 // 右边界没法判断是不是最优的，所以r = mid
                 l = mid + 1;
             } else {
