@@ -1,6 +1,7 @@
 package Leetcode125;
 // 验证回文串
 class Solution {
+    // 从逆向和正向设置两个指针
     public boolean isPalindrome(String s) {
         int n = s.length();
         int left = 0, right = n - 1;
