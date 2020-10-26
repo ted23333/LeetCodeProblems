@@ -4,6 +4,7 @@ public class Solution {
     public int minSubArrayLen(int s, int[] nums) {
         //用一个队列（或者说是滑动窗口）来维持这个s长度的子串
         // 分别用lo 和 hi 控制队列里面的元素
+        // 每次存储最短的队列
         int lo = 0, hi = 0, sum = 0, min = Integer.MAX_VALUE;
         while (hi < nums.length) {
             sum += nums[hi++];
