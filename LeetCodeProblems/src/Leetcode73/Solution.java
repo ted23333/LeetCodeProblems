@@ -33,7 +33,7 @@ class Solution {
                 }
             }
         }
-
+        // 这里根据第一行和第一列的信息哦判断是否需要整行整列归零
         // See if the first row needs to be set to zero as well
         if (matrix[0][0] == 0) {
             for (int j = 0; j < C; j++) {
@@ -48,5 +48,6 @@ class Solution {
             }
         }
     }
+    // 这里要判断一下第一行和第一列是不是等于0的
 }
 
