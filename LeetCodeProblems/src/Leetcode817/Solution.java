@@ -13,7 +13,7 @@ class Solution {
     public int numComponents(ListNode head, int[] G) {
         Set<Integer> Gset = new HashSet();
         for (int x: G) Gset.add(x);
-
+        // 将G集合中的所有元素加入hashset中
         ListNode cur = head;
         int ans = 0;
 
@@ -23,7 +23,7 @@ class Solution {
                 ans++;
             cur = cur.next;
         }
-
+        // 判断组件的数量
         return ans;
     }
 
