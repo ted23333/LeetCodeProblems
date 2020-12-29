@@ -30,7 +30,9 @@ public class Solution {
                ListNode mid = getMedian(left, right);
                TreeNode root = new TreeNode(mid.val);
                root.left = buildTree(left, mid);
+               // 左侧结点等于左半边的中点
                root.right = buildTree(mid.next, right);
+               // 右侧结点等于右半边的中点
                return root;
        }
        public ListNode getMedian(ListNode left,ListNode right){
@@ -41,6 +43,7 @@ public class Solution {
                fast = fast.next;
                slow  = slow.next;
            }
+           // 使用快慢指针法寻找链表的中点
            return slow;
        }
 
