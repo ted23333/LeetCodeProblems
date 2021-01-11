@@ -45,6 +45,7 @@ public class MaxQueue {
         if(ans == d.peekFirst()){
             d.pollFirst();
         }
+        // 如果元素弹出的和双端队列中的一致，那么也把双端队列中的元素一并弹出
         return ans;
     }
 }
