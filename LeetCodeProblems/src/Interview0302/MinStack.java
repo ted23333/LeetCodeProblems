@@ -2,7 +2,7 @@ package Interview0302;
 
 
 import java.util.Stack;
-
+// 这道题要是不让两个栈元素数量一致，可能会抛出异常
 class MinStack {
     Stack<Integer> A,B;
     /** initialize your data structure here. */
