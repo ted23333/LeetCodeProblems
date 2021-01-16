@@ -2,7 +2,7 @@ package Leetcode71;
 
 import java.util.ArrayList;
 import java.util.List;
-
+ // 简化路径
 class Solution {
     public String simplifyPath(String path) {
         //如果路径为空,直接返回"/"
