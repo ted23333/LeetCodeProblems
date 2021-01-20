@@ -1,80 +1,75 @@
 package Leetcode224;
 
 import java.util.Stack;
-
+// 实现一个简单的计算器 可以使用逆波兰式进行计算
+// 暂时不会
 class Solution {
-
     public int calculate(String s) {
 
+        Stack<Integer> stack = new Stack<Integer>();
         int operand = 0;
-        int n = 0;
-        Stack<Object> stack = new Stack<Object>();
+        int result = 0; // For the on-going result
+        int sign = 1;  // 1 means positive, -1 means negative
 
-        for (int i = s.length() - 1; i >= 0; i--) {
+        for (int i = 0; i < s.length(); i++) {
 
             char ch = s.charAt(i);
-
             if (Character.isDigit(ch)) {
 
-                // Forming the operand - in reverse order.
-                operand = (int) Math.pow(10, n) * (int) (ch - '0') + operand;
-                n += 1;
+                // Forming operand, since it could be more than one digit
+                operand = 10 * operand + (int) (ch - '0');
 
-            } else if (ch != ' ') {
-                if (n != 0) {
+            } else if (ch == '+') {
 
-                    // Save the operand on the stack
-                    // As we encounter some non-digit.
-                    stack.push(operand);
-                    n = 0;
-                    operand = 0;
+                // Evaluate the expression to the left,
+                // with result, sign, operand
+                result += sign * operand;
 
-                }
-                if (ch == '(') {
+                // Save the recently encountered '+' sign
+                sign = 1;
 
-                    int res = evaluateExpr(stack);
-                    stack.pop();
+                // Reset operand
+                operand = 0;
 
-                    // Append the evaluated result to the stack.
-                    // This result could be of a sub-expression within the parenthesis.
-                    stack.push(res);
+            } else if (ch == '-') {
 
-                } else {
-                    // For other non-digits just push onto the stack.
-                    stack.push(ch);
-                }
+                result += sign * operand;
+                sign = -1;
+                operand = 0;
+
+            } else if (ch == '(') {
+
+                // Push the result and sign on to the stack, for later
+                // We push the result first, then sign
+                stack.push(result);
+                stack.push(sign);
+
+                // Reset operand and result, as if new evaluation begins for the new sub-expression
+                sign = 1;
+                result = 0;
+
+            } else if (ch == ')') {
+
+                // Evaluate the expression to the left
+                // with result, sign and operand
+                result += sign * operand;
+
+                // ')' marks end of expression within a set of parenthesis
+                // Its result is multiplied with sign on top of stack
+                // as stack.pop() is the sign before the parenthesis
+                result *= stack.pop();
+
+                // Then add to the next operand on the top.
+                // as stack.pop() is the result calculated before this parenthesis
+                // (operand on stack) + (sign on stack * (result from parenthesis))
+                result += stack.pop();
+
+                // Reset the operand
+                operand = 0;
             }
         }
-
-        //Push the last operand to stack, if any.
-        if (n != 0) {
-            stack.push(operand);
-        }
-
-        // Evaluate any left overs in the stack.
-        return evaluateExpr(stack);
+        return result + (sign * operand);
     }
-
-    public int evaluateExpr(Stack<Object> stack) {
-
-        int res = 0;
-
-        if (!stack.empty()) {
-            res = (int) stack.pop();
-        }
-
-        // Evaluate the expression till we get corresponding ')'
-        while (!stack.empty() && !((char) stack.peek() == ')')) {
-
-            char sign = (char) stack.pop();
-
-            if (sign == '+') {
-                res += (int) stack.pop();
-            } else {
-                res -= (int) stack.pop();
-            }
-        }
-        return res;
-    }
-
 }
+
+
