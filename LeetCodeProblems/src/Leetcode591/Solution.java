@@ -3,6 +3,7 @@ package Leetcode591;
 import java.util.Stack;
 
 // 标签生成器
+// 很麻烦
 public class Solution {
     /*
 
