@@ -1,10 +1,7 @@
 package Leetcode257;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
-
 // 二叉树的所有路径
 class Solution {
     class TreeNode {
