@@ -32,7 +32,7 @@ class Solution {
         } else {
             ans = Math.min(ans, root.val - pre);
             pre = root.val;
-        }
+            }
         dfs(root.right);
     }
 }
