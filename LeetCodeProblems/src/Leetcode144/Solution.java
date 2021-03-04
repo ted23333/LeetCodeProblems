@@ -19,18 +19,22 @@ public class Solution {
     LinkedList<Integer> output = new LinkedList<>();
         public List<Integer> preorderTraversal(TreeNode root) {
             leftAdd(root);
+            // 首先向左遍历到叶子结点
             while(!stack.isEmpty())
             {
                TreeNode cur = stack.pollLast();
                leftAdd(cur.right);
+               // 弹出一个结点之后，将该节点的右儿子加入栈，然后向左遍历到叶子节点
             }
 
             return output;
         }
         void leftAdd(TreeNode root){
+            // 向左搜索遍历结点加入到栈里面
             if(root==null) return;
             stack.add(root);
             output.add(root.val);
+            //入栈的时候记录结点的值
             while(root.left!=null)
             {
                 root= root.left;
