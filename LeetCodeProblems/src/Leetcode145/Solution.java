@@ -26,6 +26,7 @@ public class Solution {
                 cur = cur.left;
             } // 这个小循环遍历左子树
             cur = stack.peek();
+            // 查看栈顶的节点 访问右子树或者不做其他处理
             //右子树为空或者第二次来到这里 第二次来到这里代表右子树已经被访问过了
             if (cur.right == null || set.contains(cur)) {
 
