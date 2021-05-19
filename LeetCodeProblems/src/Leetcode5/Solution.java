@@ -1,4 +1,5 @@
 package Leetcode5;
+// 最长回文子串
 class Solution {
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) return "";
@@ -6,6 +7,7 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             int len1 = expandAroundCenter(s, i, i);
             int len2 = expandAroundCenter(s, i, i + 1);
+            // 长度为1和长度为2 的字符串
             int len = Math.max(len1, len2);
             if (len > end - start) {
                 start = i - (len - 1) / 2;

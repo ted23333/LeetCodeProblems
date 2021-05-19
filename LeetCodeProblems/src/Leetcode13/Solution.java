@@ -4,6 +4,7 @@ import java.util.*;
 //要根据前后位置确定是加还是减
 class Solution {
     public int romanToInt(String s) {
+
         int sum = 0;
         int preNum = getValue(s.charAt(0));
         for(int i = 1;i < s.length(); i ++) {
