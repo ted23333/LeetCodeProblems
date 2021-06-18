@@ -8,6 +8,7 @@ class Solution {
         int[] dp = new int[nums.length];
         // dp数组代表以i为结尾的最长子序列的长度
         dp[0] = 1;
+
         int maxans = 1;
         for (int i = 1; i < nums.length; i++) {
             dp[i] = 1;
