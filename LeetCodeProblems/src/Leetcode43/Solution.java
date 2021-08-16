@@ -24,6 +24,7 @@ class Solution {
             // 补 0
             for (int j = 0; j < num2.length() - 1 - i; j++) {
                 temp.append(0);
+                // 补0的个数取决于具体的位数，越往后要补的零越多
             }
             int n2 = num2.charAt(i) - '0';
 
