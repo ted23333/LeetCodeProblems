@@ -29,8 +29,11 @@ class Solution {
         if(cur == null) return;
         dfs(cur.left);
         if(pre != null) pre.right = cur;
+        // 如果pre节点不为空。那么更改指针当前访问节点的前驱节点指向当前节点
         else head = cur;
+        // pre为空，cur就是头节点
         cur.left = pre;
+        // 修改左指针
         pre = cur;
         dfs(cur.right);
     }
