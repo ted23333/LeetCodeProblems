@@ -1,27 +1,35 @@
 package offer50;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 class Solution {
     public char firstUniqChar(String s) {
-        HashSet<Character> set  = new HashSet<>();
-        Queue<Character> queue = new LinkedList<>();
-        int length = s.length();
-        for(int i = 0;i<length;i++)
-        {
-          if(set.add(s.charAt(i)))
-          {
-              queue.offer(s.charAt(i));
-          }
-          else
-          { if(queue.peek().equals(s.charAt(i)))
-          {
-              queue.poll();
-          }}
+        Map<Character, Integer> position = new HashMap<Character, Integer>();
+        Queue<Pair> queue = new LinkedList<Pair>();
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            char ch = s.charAt(i);
+            if (!position.containsKey(ch)) {
+                position.put(ch, i);
+                queue.offer(new Pair(ch, i));
+            } else {
+                position.put(ch, -1);
+                while (!queue.isEmpty() && position.get(queue.peek().ch) == -1) {
+                    queue.poll();
+                }
+            }
         }
-        return queue.peek()==null?' ': queue.poll();
+        return queue.isEmpty() ? ' ' : queue.poll().ch;
+    }
+
+    class Pair {
+        char ch;
+        int pos;
+
+        Pair(char ch, int pos) {
+            this.ch = ch;
+            this.pos = pos;
+        }
     }
 }
+
