@@ -10,7 +10,7 @@ class Solution {
     }
     // 归并排序
     private int mergeSort(int l, int r) {
-        // 终止条件
+        // 终止条件，满足这个条件代表子树组长度为1 此时终止划分
         if (l >= r) return 0;
         // 递归划分
         int m = (l + r) / 2;
