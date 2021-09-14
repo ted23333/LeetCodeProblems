@@ -12,7 +12,14 @@ public class Solution {
     // p 和q在root的子树中，且分别在左右子树之中
     // p =root，q在子树中
     // q = root, p在子树中
+// 对二叉树进行先序遍历 当遇到节点p或者节点q的时候返回 从底到顶回溯，当节点p和q在root的两侧的时候，节点root即为最近公共祖先 向上返回root
 
+    // 根据返回值可能会有四种不同的情况
+   // 1 当left和right同时为空 说明都不包含p和q 返回null
+    // 2  left和right同时不为空，说明在不同的侧 root是公共祖先
+    // 3 left空 right不空 两个点都不在root的左子树中，直接返回right 具体可以分为两种情况
+    // p q其中一个在root的右子树中，此时right指向某个节点 p或者q
+    // 4 left不空 right空 同理
         public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             if(root == null || root == p || root == q) return root;
             // 根节点为空或者 根节点等于p或者q
