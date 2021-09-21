@@ -1,11 +1,14 @@
 package offer24;
 
+import java.util.Arrays;
+
 public class Solution {
     public class ListNode {
         int val;
        ListNode next;
         ListNode(int x) { val = x; }}
     public ListNode reverseList(ListNode head) {
+
       if(head==null||head.next==null) return head;
        ListNode pre = null;
        ListNode curr = head;
