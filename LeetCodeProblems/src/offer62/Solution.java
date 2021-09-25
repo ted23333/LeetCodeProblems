@@ -13,6 +13,7 @@ class Solution {
         int idx = 0;
         while (n > 1) {
             idx = (idx + m - 1) % n;
+            // 更新要删除的元素的索引
             list.remove(idx);
             n--;
         }
