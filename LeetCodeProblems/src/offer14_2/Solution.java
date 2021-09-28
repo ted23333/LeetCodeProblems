@@ -3,6 +3,7 @@ package offer14_2;
 public class Solution {
     public int cuttingRope(int n){
         {
+            // 以3为大小进行切分
             if(n<3) return 1;
             if(n==3) return 2;
             long res = 1;
