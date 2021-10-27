@@ -14,9 +14,12 @@ class Solution {
     boolean recur(int[] postorder, int i, int j) {
         if(i >= j) return true;
         int p = i;
+        // postorder[j] 代表当前的根节点
         while(postorder[p] < postorder[j]) p++;
         int m = p;
         while(postorder[p] > postorder[j]) p++;
+        // 右子树的节点都应该大于当前的根节点，判断依据就是看p==j
+        // 返回值是所有子树都需要正确才判定正确
         return p == j && recur(postorder, i, m - 1) && recur(postorder, m, j - 1);
     }
 }

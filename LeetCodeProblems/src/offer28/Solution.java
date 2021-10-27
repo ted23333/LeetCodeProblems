@@ -7,6 +7,13 @@ public class Solution {
       TreeNode right;
       TreeNode(int x) { val = x; }
   }
+  // 对称的二叉树
+    /*
+      对于树中任意对称节点L和R都有
+      L.val = R.val
+      L.left.val = R.right.val
+      L.right.val = R.left.val
+    */
     public boolean isSymmetric(TreeNode root) {
        if(root==null) return true;
          return judge(root.left,root.right);
