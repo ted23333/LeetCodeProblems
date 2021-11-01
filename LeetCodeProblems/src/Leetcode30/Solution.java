@@ -9,22 +9,24 @@ public class Solution {
 
     public List<Integer> findSubstring(String s, String[] words) {
         List<Integer> res = new ArrayList<Integer>();
-        // res 是最后的结果，
+        // res 是最后的结果
         int wordNum = words.length;
+        // 总共有多少个单词
         if (wordNum == 0) {
             return res;
         }
         int wordLen = words[0].length();
-        // 计算长度
+        // 计算长度，这里字符串长度的是相同的
         //HashMap1 存所有单词
         HashMap<String, Integer> allWords = new HashMap<String, Integer>();
         for (String w : words) {
             int value = allWords.getOrDefault(w, 0);
             allWords.put(w, value + 1);
         }
+        // 可能有的单词有重复
         //遍历所有子串
         for (int i = 0; i < s.length() - wordNum * wordLen + 1; i++) {
-            // 此处的长度代表可行的遍历的最长长度
+            // 此处的长度代表可行的遍历的最长长度，后面就不够长了
             //HashMap2 hasWords存当前扫描的字符串含有的单词
             HashMap<String, Integer> hasWords = new HashMap<String, Integer>();
             int num = 0;
@@ -40,7 +42,9 @@ public class Solution {
                     if (hasWords.get(word) > allWords.get(word)) {
                         break;
                     }
-                } else {
+                }
+                else
+                {
                     break;
                 }
                 num++;
