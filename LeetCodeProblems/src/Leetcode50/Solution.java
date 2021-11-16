@@ -1,5 +1,6 @@
 package Leetcode50;
 // Pow(x,n)
+// 这种方法相当于做二进制的拆分
 public class Solution {
     public double myPow(double x, int n) {
         if(x == 0.0f) return 0.0d;
