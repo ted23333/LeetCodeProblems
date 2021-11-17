@@ -11,6 +11,7 @@ public class Solution {
      {
          return result;
      }
+     // 如果矩阵不存在，直接返回一个空列表
      int rows = matrix.length,columns = matrix[0].length;
      boolean[][] visited = new boolean[rows][columns];
      int total = rows*columns;
@@ -27,6 +28,7 @@ public class Solution {
              directionindex = (directionindex+1)%4;
          }
          // 判断下一个要访问的元素是否在合法的位置，否则改变方向
+         // 改变方向后的一定是合法
          row += directions[directionindex][0];
          column += directions[directionindex][1];
      }

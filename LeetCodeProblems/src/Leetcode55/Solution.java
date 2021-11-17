@@ -6,7 +6,7 @@ package Leetcode55;
             int rightmost = 0;
             for (int i = 0; i < n; ++i) {
                 if (i <= rightmost) {
-                    // rightmost是能够到达的最大位置
+                    // rightmost是能够到达的最大位置,这样就可以避免出现32104这种用例的情况
                     rightmost = Math.max(rightmost, i + nums[i]);
                     // 如果遍历到的位置能够到达的最大位置大于当前的最大位置，则更新最大的位置
                     if (rightmost >= n - 1) {
