@@ -25,9 +25,12 @@ class Solution {
     public boolean isNumber(String s) {
 
         char[] ss = s.toCharArray();
+        //直接用charat时间复杂度是O(1)
         int n = ss.length;
 
         // 先检测是否有 e
+        // 如果有e 可以是整数或者是浮点数 但是e的右侧一定是整数
+        // 如果没有E 可以是整数或者浮点数
         int e = n;
         for (int i = 0; i < n; ++i) {
             if (ss[i] == 'e' || ss[i] == 'E') {

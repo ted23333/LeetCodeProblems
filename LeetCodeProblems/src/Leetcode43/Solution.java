@@ -18,6 +18,7 @@ class Solution {
 
         // num2 逐位与 num1 相乘
         for (int i = num2.length() - 1; i >= 0; i--) {
+            // 大循环
             int carry = 0;
             // 保存 num2 第i位数字与 num1 相乘的结果
             StringBuilder temp = new StringBuilder();
@@ -26,10 +27,12 @@ class Solution {
                 temp.append(0);
                 // 补0的个数取决于具体的位数，越往后要补的零越多
             }
+            // 前面要补充的位数更多
             int n2 = num2.charAt(i) - '0';
 
             // num2 的第 i 位数字 n2 与 num1 相乘
             for (int j = num1.length() - 1; j >= 0 || carry != 0; j--) {
+                // 这里是为了进一位的情况
                 int n1 = j < 0 ? 0 : num1.charAt(j) - '0';
                 int product = (n1 * n2 + carry) % 10;
                 temp.append(product);
