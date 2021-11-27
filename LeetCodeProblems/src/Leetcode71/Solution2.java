@@ -13,6 +13,7 @@ import java.util.StringJoiner;
 // 栈中不存储斜杠 只存储文件名 因为多个斜杠不方便处理
 public class Solution2 {
     public String simplifyPath(String path) {
+
         Deque<String> stack = new LinkedList<>();
         int n = path.length();
         int i = 0;
