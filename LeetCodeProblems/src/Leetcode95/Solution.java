@@ -19,6 +19,7 @@ TreeNode(int val,TreeNode left,TreeNode right){
     }
     public LinkedList<TreeNode> generate_trees(int start, int end) {
         LinkedList<TreeNode> all_trees = new LinkedList<TreeNode>();
+        all_trees.add(new TreeNode(Integer.MIN_VALUE));
         if (start > end) {
             all_trees.add(null);
             return all_trees;
