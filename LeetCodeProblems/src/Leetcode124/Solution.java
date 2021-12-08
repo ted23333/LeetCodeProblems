@@ -35,6 +35,7 @@ public class Solution {
         //右边同理
         int rightMax = Math.max(0,dfs(root.right));
         max = Math.max(max,root.val+leftMax+rightMax);
+        // 全局变量max记录最大路径和
         //返回经过root的单边最大分支给当前root的父节点计算使用
         return root.val+Math.max(leftMax,rightMax);
     }
