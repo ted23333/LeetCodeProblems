@@ -9,6 +9,7 @@ class Solution {
         HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
         int res = 0;
         for(int num:nums){
+            // 遍历整个数组
             if(!map.containsKey(num)){
                 // 如果当前哈希表不包含该数字
                 int left = map.get(num-1)==null?0:map.get(num-1);
@@ -23,6 +24,7 @@ class Solution {
                 map.put(num,cur);
                 map.put(num-left,cur);
                 map.put(num+right,cur);
+                // 应该是只记录边界就可以
             }
         }
         return res;
