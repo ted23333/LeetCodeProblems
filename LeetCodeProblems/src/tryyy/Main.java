@@ -1,20 +1,24 @@
 package tryyy;
-class MyThread extends Thread{
-     public MyThread(String name) {
-                 super(name);
-             }
-              public void run(){
-                 System.out.println(Thread.currentThread().getName()+" is running");
-             }
- };
+
+
+
 class Main {
+    int mark=0;
     public static void main(String[] args) {
-     Thread mythread = new MyThread("mythread");
-        System.out.println(Thread.currentThread().getName()+" call mythread.run()");
-               mythread.run();
+    Main so = new Main();
+    so.p();
+    so.change();
+    so.p();
+    }
+    public void change()
+    {
+        int mark = 233;
+    }
+    public void p()
+    {
+        System.out.println(mark);
+        mark = 6;
+        System.out.println(mark);
 
-                 System.out.println(Thread.currentThread().getName()+" call mythread.start()");
-
-                 //mythread.start();
     }
 }

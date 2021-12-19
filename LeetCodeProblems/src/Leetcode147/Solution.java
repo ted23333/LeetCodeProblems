@@ -16,7 +16,9 @@ public class Solution {
             if(lastSorted.val <=curr.val){
                 lastSorted = lastSorted.next;
             }
+            // 如果前面的数组有序，向后遍历
             else {
+                // 否则从哑头结点向后搜索插入
                 ListNode prev = dummyHead;
                 while(prev.next.val<=curr.val)
                 {

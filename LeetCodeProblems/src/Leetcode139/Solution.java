@@ -19,6 +19,7 @@ public class Solution {
                 if (dp[j] && wordDictSet.contains(s.substring(j, i))) {
                     dp[i] = true;
                     break;
+                    // 剪枝
                 }
             }
         }

@@ -8,9 +8,11 @@ class Solution {
       ListNode(int val) { this.val = val; }
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
   }
+  // 保证nlogn的时间复杂度的话，应该采用归并排序的方式
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
+        // 如果列表为空，返回
         ListNode fast = head.next, slow = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
