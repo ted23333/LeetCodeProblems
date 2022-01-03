@@ -10,6 +10,7 @@ public class Solution {
         // 0到amount
         // dp[i]代表以i为总数的最少硬币数量
         Arrays.fill(dp, max);
+        // 初始化dp
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
             for (int j = 0; j < coins.length; j++) {
