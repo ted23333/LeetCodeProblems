@@ -4,6 +4,7 @@ class Solution {
     public int divide(int a, int b) {
         // a除b
         long x = a, y = b;
+        // 转成long类型 避免溢出
         boolean isNeg = false;
         if ((x > 0 && y < 0) || (x < 0 && y > 0)) isNeg = true;
         if (x < 0) x = -x;
