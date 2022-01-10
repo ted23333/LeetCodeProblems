@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 // 四个数之和
+// 固定两个数，然后其余两个数双指针
+// 20220110
 public class Solution {
     public List<List<Integer>> fourSum(int[] nums,int target){
         /*定义一个返回值*/
