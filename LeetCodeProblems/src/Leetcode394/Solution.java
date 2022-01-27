@@ -14,14 +14,16 @@ class Solution {
         while (ptr < s.length()) {
             char cur = s.charAt(ptr);
             if (Character.isDigit(cur)) {
-                // 获取一个数字并进栈
+                // 如果当前的字符是一个数字
                 String digits = getDigits(s);
-                // 将其转化为字符然后存在栈里面
+                // 就把数字转化为字符然后存在栈里面
                 stk.addLast(digits);
+                // 加入到队列中
             } else if (Character.isLetter(cur) || cur == '[') {
-                // 获取一个字母并进栈
+                // 获取一个字母或者左括号并进栈
                 stk.addLast(String.valueOf(s.charAt(ptr++)));
             } else {
+                //右括号的话
                 ++ptr;
                 LinkedList<String> sub = new LinkedList<String>();
                 while (!"[".equals(stk.peekLast())) {

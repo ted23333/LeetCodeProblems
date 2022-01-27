@@ -46,7 +46,7 @@ public class Codec {
 
         return root;
     }
-
+    // 反序列化
     public TreeNode deserialize(String data) {
         String[] data_array = data.split(",");
         List<String> data_list = new LinkedList<String>(Arrays.asList(data_array));

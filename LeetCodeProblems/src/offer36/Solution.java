@@ -26,6 +26,7 @@ class Solution {
         return head;
     }
     void dfs(Node cur) {
+        // 中序遍历的时候相当于最先访问最小元素的节点 因此修改指针就可以完成整个的二叉树转换
         if(cur == null) return;
         dfs(cur.left);
         if(pre != null) pre.right = cur;
