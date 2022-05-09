@@ -3,7 +3,7 @@ package Leetcode42;
 import java.util.Deque;
 import java.util.LinkedList;
 
-// 接雨水
+// 接雨水,单调栈解法
 public class Solution {
     public int trap(int[] height) {
         int ans = 0, current = 0;

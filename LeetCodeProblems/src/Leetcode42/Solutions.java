@@ -1,5 +1,5 @@
 package Leetcode42;
-// 双指针解决
+// 双指针解决 空间复杂度是O(1)
 class Solutions {
     public int trap(int[] height) {
         int ans = 0;
